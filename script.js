@@ -1,4 +1,4 @@
-// Professional DevOps Portfolio - Interactive JavaScript
+
 'use strict';
 
 // Global variables
@@ -22,7 +22,7 @@ function initializePortfolio() {
     setupSmoothScrolling();
     setupContactForm();
     
-    // Initialize loading animations
+    // loading animations
     setTimeout(() => {
         document.body.classList.add('loaded');
     }, 100);
@@ -58,7 +58,7 @@ function setupNavigation() {
     // Handle active navigation
     window.addEventListener('scroll', updateActiveNavigation);
     
-    // Add click handlers to nav links
+    // Add click handlers
     navLinks.forEach(link => {
         link.addEventListener('click', (e) => {
             e.preventDefault();
