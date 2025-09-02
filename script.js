@@ -1,4 +1,4 @@
-
+// Professional DevOps Portfolio - Interactive JavaScript
 'use strict';
 
 // Global variables
@@ -22,7 +22,7 @@ function initializePortfolio() {
     setupSmoothScrolling();
     setupContactForm();
     
-    // loading animations
+    // Initialize loading animations
     setTimeout(() => {
         document.body.classList.add('loaded');
     }, 100);
@@ -58,7 +58,7 @@ function setupNavigation() {
     // Handle active navigation
     window.addEventListener('scroll', updateActiveNavigation);
     
-    // Add click handlers
+    // Add click handlers to nav links
     navLinks.forEach(link => {
         link.addEventListener('click', (e) => {
             e.preventDefault();
@@ -121,19 +121,25 @@ function toggleMobileMenu() {
     isMenuOpen = !isMenuOpen;
     
     if (isMenuOpen) {
-        navMenu.style.display = 'flex';
+        navMenu.classList.add('active');
         navToggle.classList.add('active');
         document.body.style.overflow = 'hidden';
     } else {
-        navMenu.style.display = 'none';
+        navMenu.classList.remove('active');
         navToggle.classList.remove('active');
         document.body.style.overflow = '';
     }
 }
 
 function closeMobileMenu() {
+    const navMenu = document.querySelector('.nav-menu');
+    const navToggle = document.querySelector('.nav-toggle');
+    
     if (isMenuOpen) {
-        toggleMobileMenu();
+        isMenuOpen = false;
+        navMenu.classList.remove('active');
+        navToggle.classList.remove('active');
+        document.body.style.overflow = '';
     }
 }
 
