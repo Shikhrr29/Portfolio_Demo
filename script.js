@@ -132,14 +132,8 @@ function toggleMobileMenu() {
 }
 
 function closeMobileMenu() {
-    const navMenu = document.querySelector('.nav-menu');
-    const navToggle = document.querySelector('.nav-toggle');
-    
     if (isMenuOpen) {
-        isMenuOpen = false;
-        navMenu.classList.remove('active');
-        navToggle.classList.remove('active');
-        document.body.style.overflow = '';
+        toggleMobileMenu();
     }
 }
 

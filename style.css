@@ -1,4 +1,4 @@
-/* CSS Properties Custom build version-69.0.1 */
+/* CSS Custom Properties */
 :root {
     /* Colors - DevOps Professional Theme */
     --primary-bg: #0f1419;
@@ -1176,11 +1176,11 @@ section {
         top: 70px;
         left: 0;
         right: 0;
-        background: rgba(15, 20, 25, 0.98);
-        backdrop-filter: blur(20px);
+        background: var(--secondary-bg);
         flex-direction: column;
         padding: var(--spacing-lg);
-        border-top: 1px solid rgba(72, 187, 120, 0.3);
+        border-top: 1px solid rgba(72, 187, 120, 0.2);
+        box-shadow: var(--shadow-lg);
         z-index: 999;
     }
     
@@ -1188,30 +1188,40 @@ section {
         display: flex;
     }
     
-    .nav-toggle {
-        display: flex;
-        align-items: center;
-        flex-shrink: 0;
-    }
-    
-    .nav-container {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        width: 100%;
-        position: relative;
-    }
-    
-    .nav-logo {
-        display: flex;
-        align-items: center;
-        white-space: nowrap;
+    .nav-link {
+        padding: var(--spacing-md) 0;
+        text-align: center;
+        border-bottom: 1px solid rgba(72, 187, 120, 0.1);
         font-size: 1.1rem;
     }
     
-    .terminal-prompt {
-        display: inline-block;
-        margin-right: var(--spacing-xs);
+    .nav-link:last-child {
+        border-bottom: none;
+    }
+    
+    .nav-toggle {
+        display: flex;
+    }
+    
+    .nav-logo {
+        font-size: 1rem;
+    }
+    
+    .nav-container {
+        padding: var(--spacing-sm) var(--spacing-md);
+    }
+    
+    /* Mobile hamburger animation */
+    .nav-toggle.active span:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 5px);
+    }
+    
+    .nav-toggle.active span:nth-child(2) {
+        opacity: 0;
+    }
+    
+    .nav-toggle.active span:nth-child(3) {
+        transform: rotate(-45deg) translate(7px, -6px);
     }
     
     .hero-content {
@@ -1257,7 +1267,7 @@ section {
     }
     
     .section-title {
-        font-size: 2rem;
+        font-size: 1.8rem;
     }
     
     .hero-cta {
@@ -1280,7 +1290,7 @@ section {
     
     .hero-info {
         padding-left: 0;
-        order: -1;
+        order: 1;
     }
     
     .terminal-window {
@@ -1294,7 +1304,6 @@ section {
         line-height: 1.6;
     }
     
-    .code-content pre {
     .terminal-line {
         word-break: break-all;
     }
@@ -1311,22 +1320,45 @@ section {
     }
     
     .experience-timeline {
-    
+        padding-left: var(--spacing-md);
     }
     
     .timeline-dot {
-        margin-left: -var(--spacing-md);
+        left: -1.25rem;
+        width: 12px;
+        height: 12px;
+    }
+    
+    /* Certifications Mobile Fix */
+    .certifications-grid {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-lg);
     }
     
     .certification-card {
-        padding-left: var(--spacing-md);
+        padding: var(--spacing-md);
+        margin: 0;
     }
     
     .cert-header {
         flex-direction: column;
         align-items: center;
         text-align: center;
+        gap: var(--spacing-sm);
     }
+    
+    .cert-icon {
+        width: 50px;
+        height: 50px;
+    }
+    
+    .cert-icon i {
+        font-size: 1.5rem;
+    }
+    
+    .cert-info h3 {
+        font-size: 1.1rem;
+        margin-bottom: var(--spacing-xs);
     }
     
     .cert-badge {
@@ -1419,27 +1451,10 @@ section {
         padding: var(--spacing-sm) var(--spacing-md);
     }
     
-    .nav-logo {
-        font-size: 1rem;
-    }
-    
     .btn-primary, .btn-secondary {
         font-size: 0.9rem;
         padding: var(--spacing-md) var(--spacing-lg);
     }
-}
-
-/* Mobile Menu Animation */
-.nav-toggle.active span:nth-child(1) {
-    transform: rotate(45deg) translate(5px, 5px);
-}
-
-.nav-toggle.active span:nth-child(2) {
-    opacity: 0;
-}
-
-.nav-toggle.active span:nth-child(3) {
-    transform: rotate(-45deg) translate(7px, -6px);
 }
 
 /* Animation Classes */
@@ -1501,5 +1516,5 @@ section {
 
 @keyframes loading {
     0% { left: -100%; }
-
+    100% { left: 100%; }
 }
