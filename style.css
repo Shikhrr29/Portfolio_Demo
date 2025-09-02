@@ -1,4 +1,4 @@
-/* CSS Custom Properties */
+/* CSS Properties Custom build version-69.0.1 */
 :root {
     /* Colors - DevOps Professional Theme */
     --primary-bg: #0f1419;
@@ -1257,7 +1257,7 @@ section {
     }
     
     .section-title {
-        font-size: 1.8rem;
+        font-size: 2rem;
     }
     
     .hero-cta {
@@ -1294,6 +1294,7 @@ section {
         line-height: 1.6;
     }
     
+    .code-content pre {
     .terminal-line {
         word-break: break-all;
     }
@@ -1310,58 +1311,22 @@ section {
     }
     
     .experience-timeline {
-        padding-left: var(--spacing-md);
+    
     }
     
     .timeline-dot {
-        left: -1.25rem;
-        width: 12px;
-        height: 12px;
-    }
-    
-    /* Certifications Mobile Fix */
-    .certifications {
-        padding-left: 0;
-        padding-right: 0;
-    }
-    
-    .certifications .container {
-        padding: 0 var(--spacing-md);
-    }
-    
-    .certifications-grid {
-        grid-template-columns: 1fr;
-        gap: var(--spacing-lg);
-        margin: 0;
-        padding: 0;
+        margin-left: -var(--spacing-md);
     }
     
     .certification-card {
-        padding: var(--spacing-md);
-        margin: 0 auto;
-        max-width: 100%;
-        width: 100%;
+        padding-left: var(--spacing-md);
     }
     
     .cert-header {
         flex-direction: column;
         align-items: center;
         text-align: center;
-        gap: var(--spacing-sm);
     }
-    
-    .cert-icon {
-        width: 50px;
-        height: 50px;
-    }
-    
-    .cert-icon i {
-        font-size: 1.5rem;
-    }
-    
-    .cert-info h3 {
-        font-size: 1.1rem;
-        margin-bottom: var(--spacing-xs);
     }
     
     .cert-badge {
@@ -1536,5 +1501,5 @@ section {
 
 @keyframes loading {
     0% { left: -100%; }
-    100% { left: 100%; }
+
 }
